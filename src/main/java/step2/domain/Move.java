@@ -10,16 +10,16 @@ public enum Move {
     B(2, Direction.RIGHT),
     b(2, Direction.LEFT);
 
-    private final Integer position;
+    private final Integer index;
     private final Direction direction;
 
-    Move(Integer position, Direction direction) {
-        this.position = position;
+    Move(Integer index, Direction direction) {
+        this.index = index;
         this.direction = direction;
     }
 
-    public Integer getPosition() {
-        return position;
+    public Integer getIndex() {
+        return index;
     }
 
     public Direction getDirection() {

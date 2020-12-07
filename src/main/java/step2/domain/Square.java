@@ -36,39 +36,24 @@ public class Square {
     }
 
     void move(Move move) {
-        int position = move.getPosition();
-        int i = position;
-        int j = position;
+        int index = move.getIndex();
+        Position position = new Position(index, index);
+        Position movedPosition = position.getMovedPosition(move);
 
-        Direction direction = move.getDirection();
-        int iDir = direction.getI();
-        int jDir = direction.getJ();
+        char oldTemp = movedPosition.getElement(square);
+        movedPosition.setElement(square, position.getElement(square));
 
-        int movedI = getMovedPosition(i, iDir);
-        int movedJ = getMovedPosition(j, jDir);
+        position = movedPosition;
+        movedPosition = position.getMovedPosition(move);
 
-        char oldTemp = square[movedI][movedJ];
-        square[movedI][movedJ] = square[i][j];
-
-        i = movedI;
-        j = movedJ;
-        movedI = getMovedPosition(i, iDir);
-        movedJ = getMovedPosition(j, jDir);
-
-        char newTemp = square[movedI][movedJ];
-        square[movedI][movedJ] = oldTemp;
+        char newTemp = movedPosition.getElement(square);
+        movedPosition.setElement(square, oldTemp);
         oldTemp = newTemp;
 
-        i = movedI;
-        j = movedJ;
-        movedI = getMovedPosition(i, iDir);
-        movedJ = getMovedPosition(j, jDir);
+        position = movedPosition;
+        movedPosition = position.getMovedPosition(move);
 
-        square[movedI][movedJ] = oldTemp;
-    }
-
-    private int getMovedPosition(int position, int direction) {
-        return (position + direction + 3) % 3;
+        movedPosition.setElement(square, oldTemp);
     }
 
     public SquareDto exportSquareDto() {
