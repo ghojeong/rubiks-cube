@@ -39,7 +39,7 @@ class CubeTest {
     @Test
     @DisplayName("가장 윗줄을 오른쪽으로 한 칸 밀기")
     void U_() {
-        cube.move(Move.U_);
+        cube.move(Move.u);
         char[][] expected = new char[3][3];
 
         expected[0][0] = 'W';
@@ -83,7 +83,7 @@ class CubeTest {
     @Test
     @DisplayName("가장 오른쪽 줄을 아래로 한 칸 밀기")
     void R_() {
-        cube.move(Move.R_);
+        cube.move(Move.r);
         char[][] expected = new char[3][3];
 
         expected[0][0] = 'R';
@@ -127,7 +127,7 @@ class CubeTest {
     @Test
     @DisplayName("가장 왼쪽 줄을 위로 한 칸 밀기")
     void L_() {
-        cube.move(Move.L_);
+        cube.move(Move.l);
         char[][] expected = new char[3][3];
 
         expected[0][0] = 'G';
@@ -171,7 +171,7 @@ class CubeTest {
     @Test
     @DisplayName("가장 아랫줄을 왼쪽으로 한 칸 밀기")
     void B_() {
-        cube.move(Move.B_);
+        cube.move(Move.b);
         char[][] expected = new char[3][3];
 
         expected[0][0] = 'R';

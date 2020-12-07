@@ -2,10 +2,13 @@ package step2.domain;
 
 import step2.dto.CubeDto;
 
+import java.util.Arrays;
+
 public class Cube {
-    private final char[][] cube = new char[3][3];
+    private final char[][] cube;
 
     public Cube() {
+        cube = new char[3][3];
         cube[0][0] = 'R';
         cube[0][1] = 'R';
         cube[0][2] = 'W';
@@ -17,6 +20,19 @@ public class Cube {
         cube[2][0] = 'G';
         cube[2][1] = 'B';
         cube[2][2] = 'B';
+    }
+
+    private Cube(char[][] cube) {
+        this.cube = cube;
+    }
+
+    @Override
+    protected Cube clone() {
+        char[][] clonedCube = new char[3][3];
+        for (int i = 0; i < cube.length; i++) {
+            clonedCube[i] = Arrays.copyOf(cube[i], cube[i].length);
+        }
+        return new Cube(clonedCube);
     }
 
     void move(Move move) {
