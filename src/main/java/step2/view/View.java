@@ -1,8 +1,8 @@
 package step2.view;
 
-import step2.dto.CubeDto;
 import step2.dto.InputDto;
-import step2.dto.MovedCubesDto;
+import step2.dto.MovedSquaresDto;
+import step2.dto.SquareDto;
 
 import java.util.Scanner;
 
@@ -16,12 +16,12 @@ public class View {
         return new InputDto(scanner.nextLine());
     }
 
-    public static void printCube(CubeDto cubeDto) {
-        print(new CubePrintable(cubeDto));
+    public static void printSquare(SquareDto squareDto) {
+        print(new SquarePrintable(squareDto));
     }
 
-    public static void printMovedCubes(MovedCubesDto movedCubesDto) {
-        print(new MovedCubesPrintable(movedCubesDto));
+    public static void printMovedSquares(MovedSquaresDto movedSquaresDto) {
+        print(new MovedSquaresPrintable(movedSquaresDto));
     }
 
     public static void printBye() {

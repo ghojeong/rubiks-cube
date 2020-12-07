@@ -1,4 +1,4 @@
-# rubiks-cube
+# rubiks-square
 
 루빅스 큐브 단계별로 구현
 
@@ -83,7 +83,8 @@ Bye~
 
 ### 기능 요구사항
 
-- [링크](https://cube3x3.com/%ED%81%90%EB%B8%8C%EB%A5%BC-%EB%A7%9E%EC%B6%94%EB%8A%94-%EB%B0%A9/#notation)를 참고해서 루빅스 큐브를 구현한다.
+- [링크](https://cube3x3.com/%ED%81%90%EB%B8%8C%EB%A5%BC-%EB%A7%9E%EC%B6%94%EB%8A%94-%EB%B0%A9/#notation)를 참고해서 루빅스 큐브를
+  구현한다.
 - 큐브는 W, B, G, Y, O, R의 6가지 색깔을 가지고 있다.
 - 입력: 각 조작법을 한 줄로 입력받는다.
 - 출력: 큐브의 6면을 펼친 상태로 출력한다.
