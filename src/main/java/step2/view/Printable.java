@@ -8,7 +8,8 @@ class Printable {
         sb.append(obj);
     }
 
-    void print() {
-        System.out.print(sb);
+    @Override
+    public String toString() {
+        return sb.toString();
     }
 }
