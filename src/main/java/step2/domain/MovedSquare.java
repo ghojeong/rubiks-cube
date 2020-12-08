@@ -3,15 +3,15 @@ package step2.domain;
 import step2.dto.MovedSquareDto;
 
 class MovedSquare {
-    private final Move move;
+    private final SquareMove squareMove;
     private final Square square;
 
-    MovedSquare(Move move, Square square) {
-        this.move = move;
+    MovedSquare(SquareMove squareMove, Square square) {
+        this.squareMove = squareMove;
         this.square = square;
     }
 
     MovedSquareDto exportMovedSquareDto() {
-        return new MovedSquareDto(move.name(), square.exportSquareDto());
+        return new MovedSquareDto(squareMove, square.exportSquareDto());
     }
 }

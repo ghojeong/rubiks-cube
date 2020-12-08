@@ -1,6 +1,6 @@
 package step2.controller;
 
-import step2.domain.Move;
+import step2.domain.SquareMove;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,19 +8,19 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 
 class InputParser {
-    private final List<Move> moves;
+    private final List<SquareMove> squareMoves;
 
-    private InputParser(List<Move> moves) {
-        this.moves = moves;
+    private InputParser(List<SquareMove> squareMoves) {
+        this.squareMoves = squareMoves;
     }
 
     static InputParser of(String input) {
         input = replace(input);
-        List<Move> moves = Arrays.asList(input.split(""))
+        List<SquareMove> squareMoves = Arrays.asList(input.split(""))
                 .stream()
-                .map(Move::valueOf)
+                .map(SquareMove::valueOf)
                 .collect(toList());
-        return new InputParser(moves);
+        return new InputParser(squareMoves);
     }
 
     private static String replace(String input) {
@@ -31,7 +31,7 @@ class InputParser {
         return input;
     }
 
-    List<Move> getMoves() {
-        return moves;
+    List<SquareMove> getMoves() {
+        return squareMoves;
     }
 }

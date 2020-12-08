@@ -35,23 +35,23 @@ public class Square {
         return new Square(clonedSquare);
     }
 
-    void move(Move move) {
-        int index = move.getIndex();
+    void move(SquareMove squareMove) {
+        int index = squareMove.getIndex();
         Position position = new Position(index, index);
-        Position movedPosition = position.getMovedPosition(move);
+        Position movedPosition = position.getMovedPosition(squareMove);
 
         char oldTemp = movedPosition.getElement(square);
         movedPosition.setElement(square, position.getElement(square));
 
         position = movedPosition;
-        movedPosition = position.getMovedPosition(move);
+        movedPosition = position.getMovedPosition(squareMove);
 
         char newTemp = movedPosition.getElement(square);
         movedPosition.setElement(square, oldTemp);
         oldTemp = newTemp;
 
         position = movedPosition;
-        movedPosition = position.getMovedPosition(move);
+        movedPosition = position.getMovedPosition(squareMove);
 
         movedPosition.setElement(square, oldTemp);
     }

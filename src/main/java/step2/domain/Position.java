@@ -17,8 +17,8 @@ class Position {
         square[i][j] = element;
     }
 
-    Position getMovedPosition(Move move) {
-        Direction direction = move.getDirection();
+    Position getMovedPosition(SquareMove squareMove) {
+        Direction direction = squareMove.getDirection();
         int iDir = direction.getI();
         int jDir = direction.getJ();
         return new Position(getMoved(i, iDir), getMoved(j, jDir));

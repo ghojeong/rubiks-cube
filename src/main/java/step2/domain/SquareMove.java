@@ -1,6 +1,6 @@
 package step2.domain;
 
-public enum Move {
+public enum SquareMove {
     U(0, Direction.LEFT),
     u(0, Direction.RIGHT),
     R(2, Direction.UP),
@@ -13,7 +13,7 @@ public enum Move {
     private final Integer index;
     private final Direction direction;
 
-    Move(Integer index, Direction direction) {
+    SquareMove(Integer index, Direction direction) {
         this.index = index;
         this.direction = direction;
     }

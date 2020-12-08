@@ -14,12 +14,12 @@ public class MovedSquares {
         this.movedSquares = movedSquares;
     }
 
-    public static MovedSquares of(List<Move> moves) {
+    public static MovedSquares of(List<SquareMove> squareMoves) {
         List<MovedSquare> movedSquares = new LinkedList<>();
         Square square = new Square();
-        moves.forEach(move -> {
-            square.move(move);
-            movedSquares.add(new MovedSquare(move, square.clone()));
+        squareMoves.forEach(squareMove -> {
+            square.move(squareMove);
+            movedSquares.add(new MovedSquare(squareMove, square.clone()));
         });
         return new MovedSquares(movedSquares);
     }
