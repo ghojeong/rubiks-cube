@@ -13,7 +13,7 @@ public class Main {
         String input = View.askInput().getInput();
         while (!input.equals("Q")) {
             InputParser parser = InputParser.of(input);
-            MovedSquares movedSquares = MovedSquares.of(parser.getMoves());
+            MovedSquares movedSquares = MovedSquares.of(square, parser.getMoves());
             View.printMovedSquares(movedSquares.exportMovedSquaresDto());
             input = View.askInput().getInput();
         }

@@ -14,9 +14,8 @@ public class MovedSquares {
         this.movedSquares = movedSquares;
     }
 
-    public static MovedSquares of(List<SquareMove> squareMoves) {
+    public static MovedSquares of(Square square, List<SquareMove> squareMoves) {
         List<MovedSquare> movedSquares = new LinkedList<>();
-        Square square = new Square();
         squareMoves.forEach(squareMove -> {
             square.move(squareMove);
             movedSquares.add(new MovedSquare(squareMove, square.clone()));
