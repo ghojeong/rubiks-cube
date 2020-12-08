@@ -15,7 +15,7 @@ class InputParser {
     }
 
     static InputParser of(String input) {
-        replace(input);
+        input = replace(input);
         List<Move> moves = Arrays.asList(input.split(""))
                 .stream()
                 .map(Move::valueOf)
@@ -23,14 +23,15 @@ class InputParser {
         return new InputParser(moves);
     }
 
-    private static void replace(String input) {
-        input.replace("U'", "u");
-        input.replace("R'", "r");
-        input.replace("L'", "l");
-        input.replace("B'", "b");
+    private static String replace(String input) {
+        input = input.replace("U'", "u");
+        input = input.replace("R'", "r");
+        input = input.replace("L'", "l");
+        input = input.replace("B'", "b");
+        return input;
     }
 
-    public List<Move> getMoves() {
+    List<Move> getMoves() {
         return moves;
     }
 }
